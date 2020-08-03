@@ -1,49 +1,19 @@
 import 'package:flutter/material.dart';
+import 'onboarding.dart';
 
-void main() {
-  runApp(MyApp());
+
+main(){
+  return runApp( NewsApp() );//responsible of lunching flutter app
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
+class NewsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+    return new MaterialApp( // only an empty window
+       debugShowCheckedModeBanner: false,
+       home: new OnBoarding(),//what we gonna draw on the window - materialApp
     );
   }
 }
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-
-
-
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
+//the main purpose of this main file is to start the onBoarding Screen - at the launch of the application
